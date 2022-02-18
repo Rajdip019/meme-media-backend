@@ -6,7 +6,10 @@ import { Request, Response } from "express";
 
 
 //All Controllers
-import codingMeme from "./controller/coding-meme.controller";
+import codingMeme from "./controller/meme/coding-meme.controller";
+
+//Importing all routes
+
 
 //App config retiving
 const port: number = config.get("port") as number;
@@ -21,7 +24,7 @@ app.get("/", (req: Request, res: Response) => {
     res.send("Hello there, this is Meme Media Backend Server Rest API built with node, typescript, express and many more!");
 })
 
-app.get("/coding-meme", codingMeme)
+app.get("/meme/coding", codingMeme)
 
 app.listen(port, host, () => {
     logger.info(`Server started at http://${host}:${port}`);
