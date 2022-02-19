@@ -28,4 +28,5 @@ app.get("/meme/coding", codingMeme)
 
 app.listen(port, host, () => {
     logger.info(`Server started at http://${host}:${port}`);
+    connectiondb();
 })
