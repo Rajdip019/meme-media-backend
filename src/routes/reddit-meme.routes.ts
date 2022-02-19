@@ -4,6 +4,6 @@ import codingMeme from '../controller/meme/coding-meme.controller'
 
 const router = Router()
 
-router.get("/meme/coding", codingMeme)
+router.post("/meme/coding", codingMeme)
 
 module.exports = router;
