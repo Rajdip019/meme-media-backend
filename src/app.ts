@@ -3,6 +3,7 @@ import express from 'express';
 import config from 'config';
 import connectiondb from "./db/connectdb";
 import { Request, Response } from "express";
+import cors from "cors";
 
 
 //All Controllers
@@ -19,12 +20,15 @@ const host: string = config.get("host") as string;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(cors({
+    origin: "http://localhost:3000"
+}))
 
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello there, this is Meme Media Backend Server Rest API built with node, typescript, express and many more!");
 })
 
-app.get("/meme/coding", codingMeme)
+app.post("/meme/coding", codingMeme)
 
 app.listen(port, host, () => {
     logger.info(`Server started at http://${host}:${port}`);

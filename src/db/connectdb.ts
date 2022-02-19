@@ -7,9 +7,9 @@ function connect(): Promise<void> {
     const dbUri = config.get("dbUri") as string;
 
     return mongoose.connect(dbUri).then(() => {
-        logger.info("Database Connected");
+        logger.info("Connected to Mongogb cluster.");
     }).catch((error) => {
-        logger.error("db error", error)
+        logger.error("Error while connecting to mongodb cluster.", error)
         process.exit(1)
     })
 }
