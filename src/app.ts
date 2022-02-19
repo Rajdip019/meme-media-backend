@@ -6,7 +6,7 @@ import { Request, Response } from "express";
 import cors from "cors";
 
 
-//All Controllers
+//All Controllers of Meme
 import codingMeme from "./controller/programing/coding-meme.controller";
 import codingMemeNew from "./controller/programing/coding-meme.new.controller";
 
@@ -55,6 +55,8 @@ app.use(cors({
 app.get("/", (req: Request, res: Response) => {
     res.send("Hello there, this is Meme Media Backend Server Rest API built with node, typescript, express and many more!");
 })
+
+//All Meme Route
 
 app.post("/meme/coding", codingMeme);
 app.post("/meme/coding/new", codingMemeNew)
