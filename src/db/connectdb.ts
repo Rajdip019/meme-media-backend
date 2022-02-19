@@ -3,8 +3,8 @@ import config from 'config';
 import {logger} from "../logger";
 
 function connect(): Promise<void> {
+    logger.info("Connecting to database...")
     const dbUri = config.get("dbUri") as string;
-    logger.info(dbUri)
 
     return mongoose.connect(dbUri).then(() => {
         logger.info("Database Connected");
