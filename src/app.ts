@@ -7,9 +7,11 @@ import cors from "cors";
 
 
 //All Controllers
-import codingMeme from "./controller/meme/coding-meme.controller";
-import codingMemeNew from "./controller/meme/coding-meme.new.controller";
+import codingMeme from "./controller/programing/coding-meme.controller";
+import codingMemeNew from "./controller/programing/coding-meme.new.controller";
 
+import economyMeme from "./controller/economy/economy-meme.controller";
+import economyMemeNew from "./controller/economy/economy-meme.new.controller";
 //Importing all routes
 
 
@@ -31,6 +33,11 @@ app.get("/", (req: Request, res: Response) => {
 
 app.post("/meme/coding", codingMeme);
 app.post("/meme/coding/new", codingMemeNew)
+
+app.post("/meme/economy", economyMeme);
+app.post("/meme/economy/new", economyMemeNew)
+
+
 
 app.listen(port, host, () => {
     logger.info(`Server started at http://${host}:${port}`);
