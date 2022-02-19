@@ -1,6 +1,6 @@
 import express from 'express'
 import { Router } from 'express'
-import codingMeme from '../controller/meme/coding-meme.controller'
+import codingMeme from '../controller/programing/coding-meme.controller'
 
 const router = Router()
 
