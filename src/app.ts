@@ -8,6 +8,7 @@ import cors from "cors";
 
 //All Controllers
 import codingMeme from "./controller/meme/coding-meme.controller";
+import codingMemeNew from "./controller/meme/coding-meme.new.controller";
 
 //Importing all routes
 
@@ -28,7 +29,8 @@ app.get("/", (req: Request, res: Response) => {
     res.send("Hello there, this is Meme Media Backend Server Rest API built with node, typescript, express and many more!");
 })
 
-app.post("/meme/coding", codingMeme)
+app.post("/meme/coding", codingMeme);
+app.post("/meme/coding/new", codingMemeNew)
 
 app.listen(port, host, () => {
     logger.info(`Server started at http://${host}:${port}`);
