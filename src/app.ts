@@ -36,6 +36,7 @@ import schoolMemeNew from "./controller/school/school.meme.new.controller";
 
 import socialMeme from "./controller/socialMedia/socialMedia.meme.controller";
 import socialMemeNew from "./controller/socialMedia/socialMedia.meme.new.controller";
+import handleUser from "./controller/Add_CheckUser";
 
 //Importing all routes
 
@@ -87,6 +88,8 @@ app.post("/meme/school/new", schoolMemeNew)
 
 app.post("/meme/social", socialMeme);
 app.post("/meme/social/new", socialMemeNew)
+
+app.post('/checkuser', handleUser);
 
 
 
