@@ -37,6 +37,8 @@ import schoolMemeNew from "./controller/school/school.meme.new.controller";
 import socialMeme from "./controller/socialMedia/socialMedia.meme.controller";
 import socialMemeNew from "./controller/socialMedia/socialMedia.meme.new.controller";
 import handleUser from "./controller/Add_CheckUser";
+import addMeme from "./controller/mememedia/addMeme.controller";
+import fetchMeme from "./controller/mememedia/fetchMeme.controller";
 
 //Importing all routes
 
@@ -91,7 +93,8 @@ app.post("/meme/social/new", socialMemeNew)
 
 app.post('/checkuser', handleUser);
 
-
+app.post('/addmeme', addMeme);
+app.get('/meme/mememedia', fetchMeme)
 
 
 app.listen(port, host, () => {

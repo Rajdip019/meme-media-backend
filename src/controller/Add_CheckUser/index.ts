@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 import { logger } from "../../logger";
-import User from "../../model/user.model";
-    
+import User from "../../model/user.model";    
 
 
 export default async function handleUser(req: Request, res: Response){
