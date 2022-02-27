@@ -40,6 +40,9 @@ import handleUser from "./controller/Add_CheckUser";
 import addMeme from "./controller/mememedia/addMeme.controller";
 import fetchMeme from "./controller/mememedia/fetchMeme.controller";
 
+
+import handleMemeNews from "./controller/MemeNews/memeNews.controller";
+
 //Importing all routes
 
 
@@ -95,6 +98,9 @@ app.post('/checkuser', handleUser);
 
 app.post('/addmeme', addMeme);
 app.get('/meme/mememedia', fetchMeme)
+
+app.get('/meme-news', handleMemeNews);
+
 
 
 app.listen(port, host, () => {
