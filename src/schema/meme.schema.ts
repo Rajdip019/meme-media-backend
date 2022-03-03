@@ -13,7 +13,7 @@ const MemeSchema = new mongoose.Schema({
             required: true,
         },
         authorImage: {
-            type: String,
+            type: String, 
             required: true,
         },
         authorName: {

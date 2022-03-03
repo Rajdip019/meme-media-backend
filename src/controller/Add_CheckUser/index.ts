@@ -4,15 +4,15 @@ import User from "../../model/user.model";
 
 
 export default async function handleUser(req: Request, res: Response){
-    const {name, email, id, image} = req.body;
-    if(!name || !email || !id || !image){
+    const {name, email, userid, image} = req.body;
+    if(!name || !email || !userid || !image){
         logger.fatal("Insufficient Data.");
         return {error: "Data error"} //Checking if all data is send from front end
     }else{
         const UserDetails = await User.findOne({email: email}) //Finding user with same email id
         if(UserDetails === null){
             const newUser = await new User({ //Ading new user if no User found with same email
-                userid: id,
+                userid: userid,
                 name: name,
                 email: email,
                 image: image
@@ -21,7 +21,7 @@ export default async function handleUser(req: Request, res: Response){
             return {success : "User Exists"}
         }else{
             logger.warn("User already exists.")
-            return {exists : "User exists"} //returning if user is found.
+            return res.json({exists : "User exists"}) //returning if user is found.
         }
     }
 }
