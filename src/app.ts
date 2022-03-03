@@ -43,6 +43,9 @@ import fetchMeme from "./controller/mememedia/fetchMeme.controller";
 
 import handleMemeNews from "./controller/MemeNews/memeNews.controller";
 
+import validationData from "./middleware/validation.middleware";
+import userValidationSchema from "./validation/user.validation";
+
 //Importing all routes
 
 
@@ -94,7 +97,7 @@ app.post("/meme/school/new", schoolMemeNew)
 app.post("/meme/social", socialMeme);
 app.post("/meme/social/new", socialMemeNew)
 
-app.post('/checkuser', handleUser);
+app.post('/checkuser', validationData(userValidationSchema), handleUser);
 
 app.post('/addmeme', addMeme);
 app.get('/meme/mememedia', fetchMeme)

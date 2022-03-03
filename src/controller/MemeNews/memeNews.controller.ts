@@ -1,4 +1,3 @@
-import express from "express"
 import { Request, Response } from "express"
 import 'dotenv/config'
 import fetch from "node-fetch"
