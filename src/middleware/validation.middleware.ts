@@ -5,7 +5,6 @@ import { AnySchema } from "yup";
 const validationData : Function = (schema: AnySchema) => 
     async (req: Request, res: Response, next: NextFunction) =>{
         const body = req.body;
-        console.log(body)
         try{
             await schema.validate(body)
             logger.info("Data is Valid.");
